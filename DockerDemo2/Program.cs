@@ -1,4 +1,6 @@
-﻿namespace DockerDemo2
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace DockerDemo2
 {
     internal class Program
     {
@@ -11,6 +13,7 @@
             Console.WriteLine("After wait");
 
             using var db = new AppDbContext();
+            db.Database.Migrate();
 
             Console.WriteLine("Querying database");
 
